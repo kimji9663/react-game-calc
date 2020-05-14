@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PhoneForm from './components/PhoneForm';
 import PhoneInfoList from './components/PhoneInfoList';
+import './App.scss';
 
 class App extends Component {
 
@@ -71,7 +72,8 @@ class App extends Component {
   
   render() {
     return (
-      <div>
+      <div className="App">
+        <div className="box red"></div>
         <PhoneForm onCreate={this.handleCreate}></PhoneForm>
         <input onChange={this.handleChange} value={this.state.keyword} placeholder="검색..." />
         <PhoneInfoList 
