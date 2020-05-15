@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import PhoneInfo from './PhoneInfo';
+import ItemInfo from '../ItemInfo/ItemInfo';
+import classNames from 'classnames/bind';
+import styles from './ItemInfoList.module.scss';
 
-class PhoneInfoList extends Component {
+const cx = classNames.bind(styles);
+
+class ItemInfoList extends Component {
     static defaultProps = {
         data: []
     } //data의 초기값을 정해준다.
@@ -14,14 +18,14 @@ class PhoneInfoList extends Component {
         console.log('rendering list');
         
         const list = data.map(
-            info => (<PhoneInfo onRemove={onRemove} onUpdate={onUpdate} info={info} key={info.id} />)
+            info => (<ItemInfo onRemove={onRemove} onUpdate={onUpdate} info={info} key={info.id} />)
         );
         return (
-            <div>
+            <div className={cx('box')}>
                 {list}
             </div>
         );
     }
 }
 
-export default PhoneInfoList;
+export default ItemInfoList;

@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
+import classNames from 'classnames/bind';
+import styles from './ItemForm.module.scss';
 
-class PhoneForm extends Component {
+const cx = classNames.bind(styles);
+
+class ItemForm extends Component {
     input = React.createRef();
 
     state = {
         name: '', // = value={this.state.name}
-        phone: '',
+        Item: '',
     }
 
     handleChange = (e) => {
         this.setState({
             // onChange가 실행되는 e.target은 input이므로, 그 하위 값 value를 넣어 줌 
             // name: e.target.value,
-            // phone: e.target.value,
+            // Item: e.target.value,
             [e.target.name]: e.target.value,
         });
     }
@@ -22,11 +26,11 @@ class PhoneForm extends Component {
         this.props.onCreate(this.state);
         // this.props.onCreate({
         //     name: this.state.name,
-        //     phone: this.state.phone,
+        //     Item: this.state.Item,
         // });
         this.setState({
             name: '',
-            phone: '',
+            Item: '',
         })
         this.input.current.focus();
     }
@@ -46,9 +50,9 @@ class PhoneForm extends Component {
                 <br />
                 <input 
                     placeholder="전화번호" 
-                    name="phone" 
+                    name="Item" 
                     onChange={this.handleChange}
-                    value={this.state.phone}
+                    value={this.state.Item}
                 />
                 <br />
                 <button type="submit">등록</button>
@@ -57,10 +61,10 @@ class PhoneForm extends Component {
                 <br />
                 {this.state.name}
                 <br />
-                {this.state.phone}
+                {this.state.Item}
             </form>
         );
     }
 }
 
-export default PhoneForm;
+export default ItemForm;

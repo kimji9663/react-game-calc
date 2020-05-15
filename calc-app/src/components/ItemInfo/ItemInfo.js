@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from 'react';
+import classNames from 'classnames/bind';
+import styles from './ItemInfo.module.scss';
 
-class PhoneInfo extends Component {
+const cx = classNames.bind(styles);
+
+class ItemInfo extends Component {
 
     state = {
         editing: false,
         name: '',
-        phone: ''
+        Item: ''
     }
 
     handleRemove = () => {
@@ -25,12 +29,12 @@ class PhoneInfo extends Component {
         if (this.state.editing) { //editing모드일 때 : 새 값으로 업데이트
             onUpdate(info.id, {
                 name: this.state.name,
-                phone: this.state.phone //handleUpdate(id, data)
+                Item: this.state.Item //handleUpdate(id, data)
             }); 
         } else {
             this.setState({
                 name: info.name, //아닐 때 : 기존 값 넣어주기
-                phone: info.phone
+                Item: info.Item
             });
         }
         this.setState({
@@ -45,29 +49,23 @@ class PhoneInfo extends Component {
     }
 
     render() {
-        const { name, phone } = this.props.info; //info는 name과 phone
+        const { name, Item } = this.props.info; //info는 name과 Item
         const { editing } = this.state;
-        
-        const style = {
-            border: '1px solid black',
-            padding: '8px',
-            margin: '8px',
-        };
 
         console.log(name);
 
         return (
-            <div style={style}>
+            <div className={cx('item')}>
                 {
                     editing ? ( //true 이면
                         <Fragment>
                             <div><input name="name" onChange={this.handleChange} value={this.state.name} /></div>
-                            <div><input name="phone" onChange={this.handleChange} value={this.state.phone} /></div>
+                            <div><input name="Item" onChange={this.handleChange} value={this.state.Item} /></div>
                         </Fragment>
                     ) : ( //false 이면
                         <Fragment>
                             <div><b>{name}</b></div>
-                            <div>{phone}</div>
+                            <div>{Item}</div>
                         </Fragment>
                     )
                 }
@@ -80,4 +78,4 @@ class PhoneInfo extends Component {
     }
 }
 
-export default PhoneInfo;
+export default ItemInfo;

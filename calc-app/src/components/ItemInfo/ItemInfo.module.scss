@@ -1,0 +1,10 @@
+@import '../../styles/utils.scss';
+
+/* 자동으로 고유해질 것이므로 흔히 사용되는 단어를 클래스 이름으로 마음대로 사용가능*/
+
+.item {
+  flex-grow: 1;
+  padding: 8px;
+  margin: 8px;
+  border: 1px solid #000;
+}

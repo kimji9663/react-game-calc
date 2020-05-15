@@ -1,0 +1,11 @@
+@import '../../styles/utils.scss';
+
+/* 자동으로 고유해질 것이므로 흔히 사용되는 단어를 클래스 이름으로 마음대로 사용가능*/
+
+.box {
+  display: flex;
+  background: #fff7e1;
+  padding: 1rem;
+  color: #000;
+  font-size: 1rem;
+}
