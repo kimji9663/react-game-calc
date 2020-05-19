@@ -15,3 +15,7 @@ $violet: #7950f2;
   width: $calculated;
   height: $calculated;
 }
+
+input, button {
+  box-sizing: border-box;
+}

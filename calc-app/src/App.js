@@ -14,18 +14,18 @@ class App extends Component {
     information: [
       {
         id: 0,
-        name: '홍길동',
-        Item: '010-0000-0001'
+        name: '철광석',
+        Item: 25
       },
       {
         id: 1,
-        name: '김00',
-        Item: '010-0000-0002'
+        name: '나뭇가지',
+        Item: 12
       },
       {
         id: 2,
-        name: '이∆∆',
-        Item: '010-0000-0003'
+        name: '무쇠',
+        Item: 77
       }
     ], //name, Item
     keyword: '',
@@ -74,11 +74,13 @@ class App extends Component {
   }
   
   render() {
+
     return (
       <div className={cx('App')}>
-        <div className={cx('box', 'red')}>
-          <ItemForm onCreate={this.handleCreate}></ItemForm>
-          <input onChange={this.handleChange} value={this.state.keyword} placeholder="검색..." />
+        <h1>LIFEAFTER</h1>
+        <ItemForm onCreate={this.handleCreate}></ItemForm>
+        <div className={cx('box', 'green')}>
+          <input onChange={this.handleChange} value={this.state.keyword} placeholder="검색..." className={cx('search-box')} />
           <ItemInfoList 
             data={this.state.information.filter(
               info => info.name.indexOf(this.state.keyword) > -1 //indexOf: 주어진 값과 일치하는 값의 인덱스를 반환
@@ -87,6 +89,9 @@ class App extends Component {
             onUpdate={this.handleUpdate}
           />
         </div>
+        <h2>계산기</h2>
+        <p>아이템 * 5 = 5</p> {/* onChange={this.itemSum} */}
+        <p>아이템가격(150) * 5 = 750</p>
       </div>
     );
   }
