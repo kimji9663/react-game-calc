@@ -26,6 +26,41 @@ class App extends Component {
         id: 2,
         name: '무쇠',
         Item: 77
+      },
+      {
+        id: 3,
+        name: '실리콘광석',
+        Item: 53
+      },
+      {
+        id: 4,
+        name: '텅스텐봉',
+        Item: 90
+      },
+      {
+        id: 5,
+        name: '강철',
+        Item: 358
+      },
+      {
+        id: 6,
+        name: '삼나무',
+        Item: 25
+      },
+      {
+        id: 7,
+        name: '금광',
+        Item: 29
+      },
+      {
+        id: 8,
+        name: '희토광석',
+        Item: 200
+      },
+      {
+        id: 9,
+        name: '야수의발',
+        Item: 27
       }
     ], //name, Item
     keyword: '',
